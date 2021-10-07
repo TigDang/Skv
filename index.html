@@ -25,12 +25,43 @@
 <body>
 
   <!-- Add your site or application content here -->
+  <input type="checkbox" id="nav-toggle" hidden>
+  <!--
+  Выдвижную панель размещаете ниже
+  флажка (checkbox), но не обязательно
+  непосредственно после него, например
+  можно и в конце страницы
+  -->
+  <nav class="nav">
+    <label for="nav-toggle" class="nav-toggle" onclick></label>
+    <h2 class="logo">
+      <a href="//dbmast.ru/">Меню</a>
+    </h2>
+    <ul>
+      <li><a href="#1">Один</a>
+      <li><a href="#2">Два</a>
+      <li><a href="#3">Три</a>
+      <li><a href="#4">Четыре</a>
+      <li><a href="#5">Пять</a>
+      <li><a href="#6">Шесть</a>
+      <li><a href="#7">Семь</a>
+    </ul>
+  </nav>
   <div class="cap">
     <div class="innercap">
       <div class="innercaptext">
         Агенство
       </div>
+      <div class="nextText">
+        Ведение в Instagram
+      </div>
+      <div class="doubleNextText">
+        Новый взгляд на развитие бизнеса
+      </div>
     </div>
+  </div>
+  <div class="contento">
+    Ну допустим!
   </div>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
