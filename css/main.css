@@ -146,7 +146,7 @@ textarea {
     bottom: 0;
     margin: 0;
     /* сдвигаем (прячем) панель относительно левого края страницы */
-    left: -320px;
+    left: -310px;
     /* внутренние отступы */
     padding: 15px 20px;
     /* плавный переход смещения панели */
@@ -470,7 +470,7 @@ textarea {
     bottom: 0;
     height: 1px;
     width: 100%;
-    background: #3bc1a0;
+    background: #e2000f;
     -webkit-transition: width .5s ease;
     transition: width .5s ease;
   }
@@ -482,7 +482,7 @@ textarea {
 
   .nav > ul > li > a:hover:before {
     width: 0%;
-    background: #3bc1a0;
+    background: #e2000f;
     -webkit-transition: width .5s ease;
     transition: width .5s ease;
   }
