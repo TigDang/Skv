@@ -71,11 +71,17 @@ textarea {
    Author's custom styles
    ========================================================================== */
 h1{
-  font-family: "Candara Light";
+  font-family: fantasy;
   margin-top: 1vh;
   font-size: 3vw;
+  font-weight: 1;
 }
-
+h2{
+  font-family: "Calibri Light";
+  margin-top: 1vh;
+  font-size: 3vw;
+  font-weight: 10;
+}
 @media screen {
   html {
     color: #222;
@@ -147,10 +153,12 @@ h1{
     background: white;
   }
   .profileName{
+    font-weight: 900;
     position: absolute;
     margin-left: 5vw;
     width: 30vw;
     height: 100vh;
+    color: #e2000f;
   }
   .profileContent{
     position: relative;
@@ -159,7 +167,10 @@ h1{
     height: 100vh;
   }
   .profileImg{
-    padding-top: 5.5px;
+    align-content: end;
+    height: 55vh;
+    width: 20vw;
+    border-radius: 50px;
   }
     /**
    * Переключаемая боковая панель навигации
