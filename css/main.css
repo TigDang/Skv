@@ -107,47 +107,14 @@ h2{
     background: #3d3d3d;
     border-radius: 20px;
   }
-  .innercaptext{
-    position: relative;
-    z-index: 2;
-    margin-top: -9vh;
-    font-family: "Bookman Old Style";
-    font-size: 10vw;
-    text-align: center;
-    color: white;
-
-  }
-  .nextText{
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    color: red;
-  }
-  .doubleNextText{
-    position: relative;
-    z-index: 2;
-    margin-bottom: 1vh;
-    font-size: 3vw;
-    text-align: center;
-    color: white;
-  }
 
   /*ТЕЛО*/
   .contento{
     margin-left: 50px;
-    margin-top: 100vh;
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 650%;
     background: black;
-  }
-  .SMMlabel {
-    font-family: "Brush Script MT", serif;
-    text-align: center;
-    font-size: 6vw;
-    z-index: 10;
-    color: #e2000f;
   }
   .page{
     height: 100vh;
@@ -209,11 +176,13 @@ h2{
     background: #000000;
     z-index: 100;
   }
+  a {
+    color: black;
+  }
 
 /*НОЖНИК*/
   .footer{
-    margin-left: 50px;
-    margin-top: 800vh;
+    margin-left: 45px;
     position: absolute;
     z-index: -1;
     width: 100%;
