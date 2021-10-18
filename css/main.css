@@ -88,11 +88,13 @@ h2{
     font-size: 1em;
     line-height: 1.4;
   }
+
+  /*ШАПКА*/
   .cap{
     position: absolute;
     z-index: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: #e2000f;
   }
   .innercap{
@@ -108,7 +110,7 @@ h2{
   .innercaptext{
     position: relative;
     z-index: 2;
-    margin-top: 15vh;
+    margin-top: -9vh;
     font-family: "Bookman Old Style";
     font-size: 10vw;
     text-align: center;
@@ -129,24 +131,27 @@ h2{
     text-align: center;
     color: white;
   }
+
+  /*ТЕЛО*/
   .contento{
     margin-left: 50px;
     margin-top: 100vh;
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 700%;
+    height: 650%;
     background: black;
   }
-  .logotype {
-    margin-left: 40vw;
-    margin-top: 27vh;
-    font-family: "Brush Script MT";
+  .SMMlabel {
+    font-family: "Brush Script MT", serif;
     text-align: center;
     font-size: 6vw;
-    position: absolute;
     z-index: 10;
     color: #e2000f;
+  }
+  .page{
+    height: 100vh;
+    background: white;
   }
   .profile{
     height: 100vh;
@@ -163,7 +168,7 @@ h2{
   .profileContent{
     position: relative;
     margin-left: 30vw;
-    width: 30vw;
+    width: 60vw;
     height: 100vh;
   }
   .profileImg{
@@ -172,13 +177,54 @@ h2{
     width: 20vw;
     border-radius: 50px;
   }
-    /**
-   * Переключаемая боковая панель навигации
-   * выдвигающаяся по клику слева
-   */
+  .logotype{
+    font-family: "Brush Script MT";
+    font-weight: 600;
+    z-index: 10;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+  }
+  .centerBigText{
+    text-align: center;
+    font-size: 7vh;
+    font-family: "Bookman Old Style";
+    font-weight: 900;
+  }
+  .leftBigText{
+    text-align: left;
+    font-size: 7vh;
+    font-family: "Bookman Old Style";
+    font-weight: 900;
+  }
+  .regText{
+    color: #e2000f;
+  }
+  .bord{
+    height: 1vh;
+    background: #000000;
+    z-index: 100;
+  }
 
+/*НОЖНИК*/
+  .footer{
+    margin-left: 50px;
+    margin-top: 800vh;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 10%;
+    background: #404040;
+    padding: 4vh;
+    color: #888888;
+  }
+
+/*МЕНЮ*/
   .nav {
-    /*  ширна произвольная, не стесняйтесь экспериментировать */
     width: 320px;
     min-width: 320px;
     /* фиксируем и выставляем высоту панели на максимум */
@@ -200,12 +246,6 @@ h2{
     /* поверх других элементов */
     z-index: 2;
   }
-
-  /**
-   * Кнопка переключения панели
-   * тег <label>
-   */
-
   .nav-toggle {
     /* абсолютно позиционируем */
     position: absolute;
@@ -233,50 +273,22 @@ h2{
     -moz-transition: color .25s ease-in-out;
     transition: color .25s ease-in-out;
   }
-
-  /* определяем текст кнопки
-   * символ Unicode (TRIGRAM FOR HEAVEN)
-  */
-
   .nav-toggle:after {
     content: '\2630';
     text-decoration: none;
   }
-
-  /* цвет текста при наведении */
-
   .nav-toggle:hover {
     color: #f4f4f4;
   }
-
-  /**
-   * Скрытый чекбокс (флажок)
-   * невидим и недоступен :)
-   * имя селектора атрибут флажка
-   */
-
   [id='nav-toggle'] {
     position: absolute;
     display: none;
   }
-
-  /**
-   * изменение положения переключателя
-   * при просмотре на мобильных устройствах
-   * когда навигация раскрыта, распологаем внутри панели
-  */
-
   [id='nav-toggle']:checked ~ .nav > .nav-toggle {
     left: auto;
     right: 2px;
     top: 1em;
   }
-
-  /**
-   * Когда флажок установлен, открывается панель
-   * используем псевдокласс:checked
-   */
-
   [id='nav-toggle']:checked ~ .nav {
     left: 0;
     box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
@@ -284,73 +296,14 @@ h2{
     -webkit-box-shadow:4px 0px 20px 0px rgba(0,0,0, 0.5);
     overflow-y: auto;
   }
-
-  /*
-   * смещение контента страницы
-   * на размер ширины панели,
-   * фишка необязательная, на любителя
-  */
-
   [id='nav-toggle']:checked ~ main > article {
     -webkit-transform: translateX(320px);
     -moz-transform: translateX(320px);
     transform: translateX(320px);
   }
-
-  /*
-   * изменение символа переключателя,
-   * привычный крестик (MULTIPLICATION X),
-   * вы можете испльзовать любой другой значок
-  */
-
   [id='nav-toggle']:checked ~ .nav > .nav-toggle:after {
     content: '\2715';
   }
-
-  /**
-   * профиксим баг в Android <= 4.1.2
-   * см: http://timpietrusky.com/advanced-checkbox-hack
-   */
-
-  body {
-    -webkit-animation: bugfix infinite 1s;
-  }
-
-  @-webkit-keyframes bugfix {
-    to {
-      padding: 0;
-    }
-  }
-
-  /**
-   * позаботьтимся о средних и маленьких экранах
-   * мобильных устройств
-   */
-
-  @media screen and (min-width: 320px) {
-    html,
-    body {
-      margin: 0;
-      overflow-x: hidden;
-    }
-  }
-
-  @media screen and (max-width: 320px) {
-    html,
-    body {
-      margin: 0;
-      overflow-x: hidden;
-    }
-    .nav {
-      width: 100%;
-      box-shadow: none
-    }
-  }
-
-  /**
-   * Формируем стиль заголовка (логотип) панели
-  */
-
   .nav h2 {
     width: 90%;
     padding: 0;
@@ -373,16 +326,12 @@ h2{
     -moz-transition: opacity 0.8s, -moz-transform 0.8s;
     -webkit-transition: opacity 0.8s, -webkit-transform 0.8s;
   }
-
   .nav h2 a {
     color: #dadada;
     text-decoration: none;
     text-transform: uppercase;
   }
-
-
   /*плавное появление заголовка (логотипа) при раскрытии панели */
-
   [id='nav-toggle']:checked ~ .nav h2 {
     opacity: 1;
     transform: scale(1, 1);
@@ -390,20 +339,17 @@ h2{
     -moz-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
   }
-
   /**
    * формируем непосредственно само меню
    * используем неупорядоченный список для пунктов меню
    * прикрутим трансфомации и плавные переходы
    */
-
   .nav > ul {
     display: block;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-
   .nav > ul > li {
     line-height: 2.5;
     opacity: 0;
@@ -416,7 +362,6 @@ h2{
     -ms-transition: opacity .5s .1s, -ms-transform .5s .1s;
     transition: opacity .5s .1s, transform .5s .1s;
   }
-
   [id='nav-toggle']:checked ~ .nav > ul > li {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -535,12 +480,6 @@ h2{
     -webkit-transition: width 0s ease;
     transition: width 0s ease;
   }
-
-  /* фон затемнения на основной контент
-   * при этом элементы блокируютя
-   * спорная такая фича, если оно вам надо
-   * просто раскомментируйте
-  */
 }
 
 @media handheld{
